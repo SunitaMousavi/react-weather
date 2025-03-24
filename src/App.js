@@ -1,13 +1,14 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Weather from "./Weather";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <footer className="App-footer">
+      <Weather />
+      <footer className="text-center">
         Coded by Sunita Mousavi and hosted on Netlify
       </footer>
     </div>
   );
 }
-
-export default App;
