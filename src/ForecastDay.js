@@ -25,7 +25,7 @@ export default function ForecastDay(props) {
     <div className="ForecastDay">
       <div className="Forecast-day">{day()}</div>
       <div>
-        <WeatherIcon code={props.weatherData.icon} size={50} />
+        <WeatherIcon code={props.forecastData.condition.icon} size={50} />
       </div>
       <div className="Forecast-temperatures">
         <span className="Forecast-temperature-max">{maxTemperature()}</span>

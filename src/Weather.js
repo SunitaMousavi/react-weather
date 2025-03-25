@@ -95,7 +95,7 @@ export default function Weather() {
           <div>
             {" "}
             <WeatherInfo weatherData={weatherData} />
-            <Forecast city={weatherData.city} />
+            <Forecast forecastData={weatherData} />
           </div>
         ) : (
           <div>Loading...</div>

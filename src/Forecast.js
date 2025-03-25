@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ForcastDay from "./ForecastDay";
+import ForecastDay from "./ForecastDay";
 import "./Weather.css";
 
-export default function ForecastDay(props) {
+export default function Forecast(props) {
   const [forecastData, setForecastData] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -18,7 +18,7 @@ export default function ForecastDay(props) {
 
   function load() {
     const apiKey = "f9006f5eft0a33fd9693b7da488a8o99";
-    let city = props.city;
+    let city = props.forecastData.city;
     const apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
@@ -30,7 +30,7 @@ export default function ForecastDay(props) {
         <div className="row">
           {forecastData.slice(0, 5).map((dailyForecast, index) => (
             <div className="col" key={index}>
-              <ForcastDay forecastData={dailyForecast} />
+              <ForecastDay forecastData={dailyForecast} />
             </div>
           ))}
         </div>
