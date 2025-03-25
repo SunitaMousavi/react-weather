@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   let days = [
@@ -24,24 +25,29 @@ export default function WeatherInfo(props) {
 
   return (
     <div className="WeatherInfo">
-      <h1>{props.weatherData.city}</h1>
-      <h2>{props.weatherData.temperature}</h2>
-      <div>
-        <img
-          src={props.weatherData.icon}
-          alt={props.weatherData.description}
-          className="weather-icon"
-        />
+      <div className="row">
+        <div className="col-7">
+          <span className="temperature">{props.weatherData.temperature}</span>
+          <span>℃</span>
+          <h1 className="city">{props.weatherData.city}</h1>
+          <div>
+            {day} {hours}:{minutes}
+          </div>
+          <div className="text-capitadivze">
+            {props.weatherData.description}
+          </div>
+          
+        </div>
+
+        <div className="col-5">
+          <div>
+            <WeatherIcon code={props.weatherData.icon} size={200} />
+          </div>
+          <div>Feels Like {Math.round(props.weatherData.feelsLike)}º</div>
+          <div>Humidity: {props.weatherData.humidity}%</div>
+          <div>Wind: {props.weatherData.wind} km/h</div>
+        </div>
       </div>
-      <h4>
-        {day} {hours}:{minutes}
-      </h4>
-      <ul>
-        <li className="text-capitalize">{props.weatherData.description}</li>
-        <li>{Math.round(props.weatherData.feelsLike)}℃</li>
-        <li>Humidity: {props.weatherData.humidity}%</li>
-        <li>Wind: {props.weatherData.wind} km/h</li>
-      </ul>
     </div>
   );
 }

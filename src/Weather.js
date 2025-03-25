@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false }); // State to hold weather data
@@ -19,7 +20,7 @@ export default function Weather() {
       city: response.data.city,
       temperature: Math.round(response.data.temperature.current),
       description: response.data.condition.description,
-      icon: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       feelsLike: response.data.temperature.feels_like,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
@@ -84,16 +85,17 @@ export default function Weather() {
             autoFocus="on"
             value={inputCity} // Controlled input: sets the value of the input field
             onChange={handleCityChange} // Call handleCityChange on input change
-          />
-          <button type="submit">
-            <span className="material-symbols-outlined">search</span>
-          </button>
+        className="search-bar"
+        />
+        <input type="submit" value="SEARCH" className="search-button" />
+       
         </form>
         {error && <div className="alert alert-danger">{error}</div>}
         {weatherData.ready ? (
           <div>
             {" "}
-            <WeatherInfo weatherData={weatherData} />{" "}
+            <WeatherInfo weatherData={weatherData} />
+            <Forecast city={weatherData.city} />
           </div>
         ) : (
           <div>Loading...</div>

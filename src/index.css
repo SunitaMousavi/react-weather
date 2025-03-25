@@ -87,7 +87,12 @@
   initial-value: 35%
 }
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
   --y-0: 90%;
   --c-0: hsla(190.09900990099013, 84%, 76%, 1);
   --x-0: 0%;
