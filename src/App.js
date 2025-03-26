@@ -20,8 +20,8 @@ export default function App() {
           target="_blank"
           rel="noopener noreferrer">
           GitHub
-        </a>
-        and hosted on
+        </a>{" "}
+        and hosted on{" "}
         <a
           href="https://reactweatherapp-sunitamousavi.netlify.app"
           target="_blank"
