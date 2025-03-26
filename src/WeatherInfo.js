@@ -40,7 +40,7 @@ export default function WeatherInfo(props) {
         </div>
 
         <div className="col-5">
-          <div>
+          <div className="icon">
             <WeatherIcon code={props.weatherData.icon} size={200} />
           </div>
           <div>Feels Like {Math.round(props.weatherData.feelsLike)}º</div>

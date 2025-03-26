@@ -6,6 +6,39 @@
   backdrop-filter: blur(5px);
 }
 
+.search-bar {
+  height: 50px;
+  width: 400px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #ffffff30;
+  border: 2px solid #fff;
+}
+
+.search-bar:focus {
+  outline: none;
+  border: 2px solid #84d2f6;
+}
+
+.search-button {
+  height: 50px;
+  width: 120px;
+  color: #000;
+  font-weight: 300;
+  border: 2px solid #fff;
+  background-color: #ffffff30;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-left: 30px
+}
+
+.search-button:hover {
+  color: #fff;
+  font-weight: 400;
+  background-color: #84d2f6;
+  border: 2px solid #fff;
+}
+
 .Weather .temperature {
   font-size: 100px;
   font-weight: 700;
@@ -16,25 +49,36 @@
   font-weight: 700;
 }
 
-.Weather ul li {
-  list-style-type: none;
+.Weather .icon {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
-.search-bar {
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  background: #ffffff;
-  transition: 0.3s;
+.ForecastDay {
+  padding: 15px;
+  border: 1px solid #fff;
+  background-color: #ffffff30;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
-.search-bar:focus {
-  outline-color: #e8e8e8;
-  background: #e8e8e8;
-  transition: 0.3s;
+.ForecastDay .Forecast-day {
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
 }
 
-.search-button {
-  padding: 10px;
-  border-radius: 5px;
+.ForecastDay .Forecast-icon {
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.ForecastDay .Forecast-temperatures {
+  display: flex;
+  justify-content: center;
+}
+
+.ForecastDay .Forecast-temperature-min {
+  font-weight: 300;
+  margin-left: 5px;
 }

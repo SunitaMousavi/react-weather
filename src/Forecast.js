@@ -9,7 +9,7 @@ export default function Forecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.city]);
+  }, [props.forecastData.city]);
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
