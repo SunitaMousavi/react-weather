@@ -3,7 +3,6 @@
   min-height: 100vh; /* Ensures the Weather component takes full height */
   display: flex;
   flex-direction: column;
-  
 }
 
 .App {
@@ -15,4 +14,8 @@
 .App footer {
   font-size: 11px;
   margin: 10px 0;
+}
+
+.App a {
+  background-color: #84d2f6
 }
